@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roster Management</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/newstyle.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/team-logo0.png" alt="Team Logo" class="logo">
+        Hockey System
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="roster.html">Roster</a></li>
+          <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+          <li class="nav-item"><a class="nav-link" href="finances.html">Finances</a></li>
+          <li class="nav-item"><a class="nav-link" href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero text-center">
+    <div class="container">
+      <h1>Roster Management</h1>
+      <p class="mb-0">Manage player information and team roster</p>
+    </div>
+  </section>
+
+  <main class="container my-5">
+    <div class="card p-4 card-box">
+      <div class="row mb-4">
+        <div class="col-md-8 mb-3 mb-md-0">
+          <input type="text" class="form-control" placeholder="Search by name, position, or jersey number">
+        </div>
+        <div class="col-md-4 text-md-end">
+          <button class="btn btn-danger">Add Player</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Year</th>
+              <th>Injured</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10</td>
+              <td>Player One</td>
+              <td>Forward</td>
+              <td>Senior</td>
+              <td>No</td>
+              <td>player1@team.edu</td>
+              <td>555-111-1111</td>
+              <td>
+                <button class="btn btn-sm btn-primary">Edit</button>
+                <button class="btn btn-sm btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>Player Two</td>
+              <td>Defense</td>
+              <td>Junior</td>
+              <td>Yes</td>
+              <td>player2@team.edu</td>
+              <td>555-222-2222</td>
+              <td>
+                <button class="btn btn-sm btn-primary">Edit</button>
+                <button class="btn btn-sm btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Player Three</td>
+              <td>Goalie</td>
+              <td>Sophomore</td>
+              <td>No</td>
+              <td>player3@team.edu</td>
+              <td>555-333-3333</td>
+              <td>
+                <button class="btn btn-sm btn-primary">Edit</button>
+                <button class="btn btn-sm btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>Player Four</td>
+              <td>Forward</td>
+              <td>Freshman</td>
+              <td>No</td>
+              <td>player4@team.edu</td>
+              <td>555-444-4444</td>
+              <td>
+                <button class="btn btn-sm btn-primary">Edit</button>
+                <button class="btn btn-sm btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-3">
+        <a href="index.html" class="btn btn-secondary">Back to Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
