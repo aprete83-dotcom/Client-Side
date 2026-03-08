@@ -2,25 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
+  <!-- makes page responsive on phone/tablet too -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Roster Management</title>
 
+  <!-- bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- our css file for the whole website -->
   <link rel="stylesheet" href="css/newstyle.css">
 </head>
 <body>
 
+  <!-- top navigation bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+
+      <!-- logo + website name -->
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="images/team-logo0.png" alt="Team Logo" class="logo">
         Hockey System
       </a>
 
+      <!-- hamburger button for smaller screens -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <!-- navbar links -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
@@ -34,6 +45,7 @@
     </div>
   </nav>
 
+  <!-- red banner section -->
   <section class="hero text-center">
     <div class="container">
       <h1>Roster Management</h1>
@@ -41,19 +53,37 @@
     </div>
   </section>
 
+  <!-- main page content -->
   <main class="container my-5">
+
+    <!-- white card with search + button + table -->
     <div class="card p-4 card-box">
+
+      <!-- top row with search bar and add player button -->
       <div class="row mb-4">
+
         <div class="col-md-8 mb-3 mb-md-0">
+          <!-- search bar for player search -->
           <input type="text" class="form-control" placeholder="Search by name, position, or jersey number">
         </div>
+
         <div class="col-md-4 text-md-end">
-          <button class="btn btn-danger">Add Player</button>
+          <!-- button to open popup form -->
+          <!-- bootstrap modal will open when clicking -->
+          <button class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addPlayerModal">
+            Add Player
+          </button>
         </div>
+
       </div>
 
+      <!-- responsive roster table -->
       <div class="table-responsive">
         <table class="table table-striped table-bordered align-middle">
+
+          <!-- table header -->
           <thead class="table-dark">
             <tr>
               <th>#</th>
@@ -66,6 +96,8 @@
               <th>Action</th>
             </tr>
           </thead>
+
+          <!-- sample data for prototype -->
           <tbody>
             <tr>
               <td>10</td>
@@ -80,6 +112,7 @@
                 <button class="btn btn-sm btn-danger">Delete</button>
               </td>
             </tr>
+
             <tr>
               <td>22</td>
               <td>Player Two</td>
@@ -93,6 +126,7 @@
                 <button class="btn btn-sm btn-danger">Delete</button>
               </td>
             </tr>
+
             <tr>
               <td>7</td>
               <td>Player Three</td>
@@ -106,6 +140,7 @@
                 <button class="btn btn-sm btn-danger">Delete</button>
               </td>
             </tr>
+
             <tr>
               <td>14</td>
               <td>Player Four</td>
@@ -120,15 +155,122 @@
               </td>
             </tr>
           </tbody>
+
         </table>
       </div>
 
+      <!-- back button -->
       <div class="mt-3">
         <a href="index.html" class="btn btn-secondary">Back to Dashboard</a>
       </div>
+
     </div>
   </main>
 
+  <!--
+    this is the popup form for add player
+    right now it is only the interface idea
+    later this can connect to sql server and save data
+  -->
+  <div class="modal fade" id="addPlayerModal" tabindex="-1" aria-labelledby="addPlayerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- popup top part -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPlayerModalLabel">Add New Player</h5>
+
+          <!-- close X button -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- popup body with form -->
+        <div class="modal-body">
+          <form>
+
+            <!-- first and last name -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+              </div>
+
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+              </div>
+            </div>
+
+            <!-- jersey, position, year -->
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="jerseyNumber" class="form-label">Jersey Number</label>
+                <input type="number" class="form-control" id="jerseyNumber" placeholder="Example 24">
+              </div>
+
+              <div class="col-md-4">
+                <label for="position" class="form-label">Position</label>
+                <select class="form-select" id="position">
+                  <option selected>Select position</option>
+                  <option>Forward</option>
+                  <option>Defense</option>
+                  <option>Goalie</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label for="year" class="form-label">Year</label>
+                <select class="form-select" id="year">
+                  <option selected>Select year</option>
+                  <option>Freshman</option>
+                  <option>Sophomore</option>
+                  <option>Junior</option>
+                  <option>Senior</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- email and phone -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+              </div>
+
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+              </div>
+            </div>
+
+            <!-- injury status -->
+            <div class="mb-3">
+              <label for="injuryStatus" class="form-label">Injury Status</label>
+              <select class="form-select" id="injuryStatus">
+                <option selected>Select status</option>
+                <option>Healthy</option>
+                <option>Injured</option>
+              </select>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- popup buttons -->
+        <div class="modal-footer">
+          <!-- closes popup -->
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+          <!-- later this could submit to sql -->
+          <button type="button" class="btn btn-success">Save Player</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- bootstrap js needed for modal to work -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
